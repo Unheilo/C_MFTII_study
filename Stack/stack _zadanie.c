@@ -40,6 +40,124 @@ int is_full(Stack* st) {
     return st->n == sizeof(st->a) / sizeof(st->a[0]);
 }
 
+//void stack_init(Stack* s); -необходимые действия для создания и инициализации стека. (Когда мы создаем локальную переменную, то она не инициализируется 0, т.е.в поле n может лежать любое число.)
+
+//void stack_init(Stack* s) 
+//{
+//    s->n == 0;
+//}
+//
+//void stack_push(Stack* s, Data x)
+//{
+//    s->a[s->n] = x;
+//    s->n++;
+//
+//}
+//
+//Data stack_pop(Stack* s)
+//{
+//    Data res = s->a[s->n - 1];
+//    s->n--;
+//    return res;
+//}
+//
+//Data stack_get(Stack* s)
+//{
+//    Data res = s->a[s->n - 1];
+//    return res;
+//}
+//
+//void stack_clear(Stack* s)
+//{
+//    while(s->n != 0)    {
+//        s->n--;
+//    }
+//}
+//
+//void stack_print(Stack* s)
+//{
+//    for (unsigned int i = 0; i < s->n; i++)
+//        printf("%d ", s->a[i]);
+//    printf("\n");
+//}
+//
+//int stack_size(Stack* s) {
+//    return s->n * sizeof(s->a[0]);
+//}
+//
+//int stack_is_empty(Stack* s) {
+//    return s->n == 0;
+//}
+//
+//int stack_is_full(Stack* s) {
+//    return s->n == sizeof(s->a) / sizeof(s->a[0]);
+//}
+
+void stack_init(Stack* s) {
+    s->n = 0;
+}
+
+void stack_push(Stack* s, Data x) {
+    if (stack_is_full(s)) {
+        printf("Stack overflow\n");
+        exit(1);
+    }
+    s->a[s->n++] = x;
+}
+
+Data stack_pop(Stack* s) {
+    if (stack_is_empty(s)) {
+        printf("Stack underflow\n");
+        exit(1);
+    }
+    return s->a[--s->n];
+}
+
+Data stack_get(Stack* s) {
+    if (stack_is_empty(s)) {
+        printf("Stack is empty\n");
+        exit(1);
+    }
+    return s->a[s->n - 1];
+}
+
+void stack_clear(Stack* s) {
+    s->n = 0;
+}
+
+void stack_print(Stack* s) {
+    for (int i = 0; i < s->n; i++) {
+        printf("%d ", s->a[i]);
+    }
+    printf("\n");
+}
+
+int stack_size(Stack* s) {
+    return s->n;
+}
+
+int stack_is_empty(Stack* s) {
+    return s->n == 0;
+}
+
+int stack_is_full(Stack* s) {
+    return s->n == N;
+}
+
+
+
+
+
+
+//void stack_push(Stack * s, Data x); -кладет число х в стек;
+//Data stack_pop(Stack* s); -достает одно число из стека и возвращает его
+//Data stack_get(Stack * s); -возвращает число, лежащее на верхушке стека, не изменяя состояния стека;
+//void stack_clear(Stack* s); -очищает стек(функция stack_is_empty должна вернуть 1).
+//void stack_print(Stack * s); -распечатывает через пробел числа, лежащие в стеке.С самого первого до верхнего.В конце переводит строку.
+//int stack_size(Stack* s); -возвращает количество элементов, лежащих в стеке
+//int stack_is_empty(Stack* s); -возвращает 1 если стек пуст, иначе возвращает 0.
+//int stack_is_full(Stack * s); -возвращает 1 если стек полон(в него нельзя добавлять данные, это приведет к переполнению), иначе возвращает 0.
+
 int main()
 {
     Data test[N] = { 5, 17, -3, 0, 1, 2, 3, 4 };

@@ -6,9 +6,10 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 
 add_executable(C_MFTII_study
-        First.c
+        #First.c
         #hello/hello.c
-        Stack/stack.c "Stack/stack _zadanie.c")
+        #Stack/stack.c 
+        "Stack/stack (2).c")
 
 
 
