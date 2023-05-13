@@ -23,7 +23,7 @@ int main()
     Stack s = {{7, 4, 1}, 3};
     Stack *st = &s;
 
-    init(st);
+//    init(st);
     print(st);
 
     return 0;

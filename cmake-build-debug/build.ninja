@@ -48,14 +48,14 @@ build cmake_object_order_depends_target_C_MFTII_study: phony || CMakeFiles/C_MFT
 
 build CMakeFiles/C_MFTII_study.dir/First.c.o: C_COMPILER__C_MFTII_study_Debug /Users/stanislavkrylov/Documents/GitHub/C_MFTII_study/First.c || cmake_object_order_depends_target_C_MFTII_study
   DEP_FILE = CMakeFiles/C_MFTII_study.dir/First.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu11
+  FLAGS = -g -Wall -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu11
   INCLUDES = -I/Users/stanislavkrylov/Documents/GitHub/C_MFTII_study/.
   OBJECT_DIR = CMakeFiles/C_MFTII_study.dir
   OBJECT_FILE_DIR = CMakeFiles/C_MFTII_study.dir
 
 build CMakeFiles/C_MFTII_study.dir/Stack/stack.c.o: C_COMPILER__C_MFTII_study_Debug /Users/stanislavkrylov/Documents/GitHub/C_MFTII_study/Stack/stack.c || cmake_object_order_depends_target_C_MFTII_study
   DEP_FILE = CMakeFiles/C_MFTII_study.dir/Stack/stack.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu11
+  FLAGS = -g -Wall -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -std=gnu11
   INCLUDES = -I/Users/stanislavkrylov/Documents/GitHub/C_MFTII_study/.
   OBJECT_DIR = CMakeFiles/C_MFTII_study.dir
   OBJECT_FILE_DIR = CMakeFiles/C_MFTII_study.dir/Stack
@@ -69,7 +69,7 @@ build CMakeFiles/C_MFTII_study.dir/Stack/stack.c.o: C_COMPILER__C_MFTII_study_De
 # Link the executable C_MFTII_study
 
 build C_MFTII_study: C_EXECUTABLE_LINKER__C_MFTII_study_Debug CMakeFiles/C_MFTII_study.dir/First.c.o CMakeFiles/C_MFTII_study.dir/Stack/stack.c.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -Wall -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/C_MFTII_study.dir
   POST_BUILD = :
   PRE_LINK = :
