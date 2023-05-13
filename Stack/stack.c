@@ -35,6 +35,10 @@ int is_empty(Stack * st) {
     return st->n == 0;
 }
 
+int is_full(Stack * st) {
+    return st->n == sizeof(st->a) / sizeof(st->a[0]);
+}
+
 int main()
 {
     Stack s = {{7, 4, 1}, 3};
@@ -42,7 +46,7 @@ int main()
 
     init(st);
     printf("empty: %s\n", is_empty(st) ? "YES" : "NO"); // YES
-
+    printf("full: %s\n", is_full(st) ? "YES" : "NO"); // NO
     print(st);
 
     Data d;
