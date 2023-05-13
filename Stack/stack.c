@@ -24,6 +24,13 @@ void push(Stack * st, Data data)
     st->n ++;
 }
 
+Data pop(Stack * st)
+{
+    Data res = st->a[st->n - 1];
+    st->n --;
+    return res;
+}
+
 int main()
 {
     Stack s = {{7, 4, 1}, 3};
@@ -32,12 +39,34 @@ int main()
     init(st);
     print(st);
 
-    push(st, 5);
+    Data d;
+    d = 5;
+    printf("push %d :", d);
+    push(st, d);
     print(st); // 5
-    push(st, 17);
+
+    d = 17;
+    printf("push %d :", d);
+    push(st, d);
     print(st); // 5 17
-    push(st, -3);
-    print(st); // 5 17 -3
+
+    d = -3;
+    printf("push %d :", d);
+    push(st, d);
+    print(st); // pop -3: 5 17 -3
+
+
+    d = pop(st);
+    printf("pop %d :", d);
+    print(st); // pop -3: 5 17
+
+    d = pop(st);
+    printf("pop %d :", d);
+    print(st); // pop 17: 5
+
+    d = pop(st);
+    printf("pop %d :", d);
+    print(st); // pop 5:
 
     return 0;
 }
