@@ -14,11 +14,16 @@ void print(Stack * st)
     printf("\n");
 }
 
+void init(Stack * st) {
+    st->n = 0;
+}
+
 int main()
 {
     Stack s = {{7, 4, 1}, 3};
     Stack *st = &s;
 
+    init(st);
     print(st);
 
     return 0;
