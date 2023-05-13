@@ -116,7 +116,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "hello/hello.c",
+			"path" : "Stack/stack.c",
 			"sourceGroupIndex" : 0
 		}
 	],

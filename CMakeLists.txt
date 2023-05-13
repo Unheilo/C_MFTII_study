@@ -7,7 +7,8 @@ include_directories(.)
 
 add_executable(C_MFTII_study
         First.c
-        hello/hello.c)
+        #hello/hello.c
+        Stack/stack.c)
 
 
 
