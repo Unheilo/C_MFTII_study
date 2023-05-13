@@ -18,13 +18,26 @@ void init(Stack * st) {
     st->n = 0;
 }
 
+void push(Stack * st, Data data)
+{
+    st->a[st->n] = data;
+    st->n ++;
+}
+
 int main()
 {
     Stack s = {{7, 4, 1}, 3};
     Stack *st = &s;
 
-//    init(st);
+    init(st);
     print(st);
+
+    push(st, 5);
+    print(st); // 5
+    push(st, 17);
+    print(st); // 5 17
+    push(st, -3);
+    print(st); // 5 17 -3
 
     return 0;
 }
