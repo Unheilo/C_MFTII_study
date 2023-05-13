@@ -41,45 +41,44 @@ int is_full(Stack * st) {
 
 int main()
 {
-    Stack s = {{7, 4, 1}, 3};
-    Stack *st = &s;
+    Stack stack;            // создаем стек
+    Stack * st = &stack;    // указатель на созданный стек
 
     init(st);
     printf("empty: %s\n", is_empty(st) ? "YES" : "NO"); // YES
-    printf("full: %s\n", is_full(st) ? "YES" : "NO"); // NO
+    printf("full: %s\n", is_full(st) ? "YES" : "NO");   // NO
+    print(st);              // ничего не печатается
+
+    // тесты для push
+    push(st, 5);
+    print(st);      // 5
+    push(st, 17);
+    print(st);      // 5 17
+    push(st, -3);
+    print(st);      // 5 17 -3
+
+    printf("empty: %s\n", is_empty(st) ? "YES" : "NO"); // NO
+    printf("full: %s\n", is_full(st) ? "YES" : "NO");   // YES
+
+    // тесты для pop
+    Data d;
+    d = pop(st);    // pop -3: 5 17
+    printf("pop %d: ", d);
     print(st);
 
-    Data d;
-    d = 5;
-    printf("push %d :", d);
-    push(st, d);
-    print(st); // 5
-    printf("empty: %s\n", is_empty(st) ? "YES" : "NO"); // NO
+    d = pop(st);    // pop 17: 5
+    printf("pop %d: ", d);
+    print(st);
 
-    d = 17;
-    printf("push %d :", d);
-    push(st, d);
-    print(st); // 5 17
+    d = pop(st);    // pop 5:
+    printf("pop %d: ", d);
+    print(st);
 
-    d = -3;
-    printf("push %d :", d);
-    push(st, d);
-    print(st); // pop -3: 5 17 -3
-
-
-    d = pop(st);
-    printf("pop %d :", d);
-    print(st); // pop -3: 5 17
-
-    d = pop(st);
-    printf("pop %d :", d);
-    print(st); // pop 17: 5
-
-    d = pop(st);
-    printf("pop %d :", d);
-    print(st); // pop 5:
+    printf("empty: %s\n", is_empty(st) ? "YES" : "NO"); // YES
+    printf("full: %s\n", is_full(st) ? "YES" : "NO");   // NO
 
     return 0;
+    
 }
 
 //typedef int Data;
