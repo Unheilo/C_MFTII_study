@@ -5,7 +5,7 @@ typedef int Data;
 typedef struct {
     Data a[N]; // данные
     unsigned int n; // сколько элементов хранится в стеке
-};
+} Stack;
 
 int main()
 {
