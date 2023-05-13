@@ -1,0 +1,3 @@
+/Users/stanislavkrylov/Documents/GitHub/C_MFTII_study/cmake-build-debug/CMakeFiles/C_MFTII_study.dir
+/Users/stanislavkrylov/Documents/GitHub/C_MFTII_study/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/stanislavkrylov/Documents/GitHub/C_MFTII_study/cmake-build-debug/CMakeFiles/rebuild_cache.dir
