@@ -10,6 +10,7 @@ struct Node {
 };
 
 void print(Node* list);
+int is_empty(Node* list);
 void push(Node ** plist, Data d);
 
 void print(Node* list) {
@@ -26,14 +27,19 @@ void push(Node** plist, Data d) {
 	*plist = p;
 }
 
+int is_empty(Node* list) {
+	return list == NULL;
+}
+
 int main() {
 	Data test[] = { 21, 17, 3, 10 };
 	Node* list = NULL;
-
+	printf("Empty: %s\n", is_empty(list) ? "YES" : "NO");
 	for (size_t i = 0; i < sizeof(test) / sizeof(test[0]); i++) {
-		pust(&list, test[i]);
+		push(&list, test[i]);
 		print(list);
 	}
+	printf("Empty: %s\n", is_empty(list) ? "YES" : "NO");
 
 	return 0;
 }
