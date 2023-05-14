@@ -3,7 +3,6 @@
 typedef int Data;
 
 typedef struct Node Node;
-
 struct Node {
 	Data data;
 	Node* next;
@@ -11,5 +10,10 @@ struct Node {
 
 int main() {
 	struct Node* list = NULL;
+	Node a = { 3 }, b = { 17 }, c = { 21 }, t = { 10 };
+	list = &a;
+	a.next = &b;
+	b.next = &c;
+	c.next = NULL;
 	return 0;
 }
