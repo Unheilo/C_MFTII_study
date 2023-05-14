@@ -49,7 +49,7 @@ cmake_ninja_workdir = C$:\Users\Admin\Documents\GitHub\C_MFTII_study\out\build\x
 
 build cmake_object_order_depends_target_C_MFTII_study: phony || CMakeFiles\C_MFTII_study.dir
 
-build CMakeFiles\C_MFTII_study.dir\Stack\stack_(2).c.obj: C_COMPILER__C_MFTII_study_Debug C$:\Users\Admin\Documents\GitHub\C_MFTII_study\Stack\stack$ (2).c || cmake_object_order_depends_target_C_MFTII_study
+build CMakeFiles\C_MFTII_study.dir\Stack\stack(3).c.obj: C_COMPILER__C_MFTII_study_Debug C$:\Users\Admin\Documents\GitHub\C_MFTII_study\Stack\stack(3).c || cmake_object_order_depends_target_C_MFTII_study
   FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd -std:c11
   INCLUDES = -IC:\Users\Admin\Documents\GitHub\C_MFTII_study\.
   OBJECT_DIR = CMakeFiles\C_MFTII_study.dir
@@ -65,7 +65,7 @@ build CMakeFiles\C_MFTII_study.dir\Stack\stack_(2).c.obj: C_COMPILER__C_MFTII_st
 #############################################
 # Link the executable C_MFTII_study.exe
 
-build C_MFTII_study.exe: C_EXECUTABLE_LINKER__C_MFTII_study_Debug CMakeFiles\C_MFTII_study.dir\Stack\stack_(2).c.obj
+build C_MFTII_study.exe: C_EXECUTABLE_LINKER__C_MFTII_study_Debug CMakeFiles\C_MFTII_study.dir\Stack\stack(3).c.obj
   FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
