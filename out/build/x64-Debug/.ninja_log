@@ -1,16 +1,6 @@
 # ninja log v5
-2	207	7057071700180401	CMakeFiles/C_MFTII_study.dir/First.c.obj	b28b483ada4234dc
-3	78	7057080028903159	CMakeFiles/C_MFTII_study.dir/Stack/stack.c.obj	50ba600df4048cf6
-93	235	7057609238701471	C_MFTII_study.exe	aa006e099c834c09
-18	587	7057710170725684	CMakeFiles/C_MFTII_study.dir/Stack/stack_(2).c.obj	6254f95c781ac9dd
-2	606	7057133554733146	CMakeFiles/C_MFTII_study.dir/Stack/stack__zadanie.c.obj	1624db23be423cba
-22	587	7057710170735689	CMakeFiles/C_MFTII_study.dir/Stack/stack_(2)_zadanie.c.obj	91564990043404b9
-7	105	7057711225956928	CMakeFiles/C_MFTII_study.dir/Stack/stack(3).c.obj	e7846628800620b
-1	98	7057713872606771	CMakeFiles/C_MFTII_study.dir/Stack/stack(3).c.obj	e7846628800620b
-99	281	7057713873787689	C_MFTII_study.exe	9b7eaee8ce5439ff
-11	514	7057796059610499	CMakeFiles/C_MFTII_study.dir/Stack/stack(3).c.obj	e7846628800620b
-515	962	7057796063486934	C_MFTII_study.exe	9b7eaee8ce5439ff
-12	375	7057805217276690	CMakeFiles/C_MFTII_study.dir/Stack/stack(3).c.obj	e7846628800620b
-376	536	7057805218392622	C_MFTII_study.exe	9b7eaee8ce5439ff
-11	110	7057805806845405	CMakeFiles/C_MFTII_study.dir/Stack/stack(3).c.obj	e7846628800620b
-110	269	7057805807897834	C_MFTII_study.exe	9b7eaee8ce5439ff
+2	82	7057820961923000	CMakeFiles/C_MFTII_study.dir/Stack/list1.c.obj	4a90a4b5330fbb1f
+7	235	7057821462437196	CMakeFiles/C_MFTII_study.dir/Stack/stack(3).c.obj	e7846628800620b
+236	418	7057821463777622	C_MFTII_study.exe	9b7eaee8ce5439ff
+3	236	7057825527224142	CMakeFiles/C_MFTII_study.dir/list/list1.c.obj	2bd4c6fb4d58ec14
+237	431	7057825528619449	C_MFTII_study.exe	501042e68462038e
