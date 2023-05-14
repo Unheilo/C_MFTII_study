@@ -4,77 +4,151 @@
 #define MAX_STACK_SIZE 100000
 
 typedef struct {
-	char* data;
-	int top;
+    int* data;
+    int top;
 } Stack;
 
 void init(Stack* s) {
-	s->data = (char*)malloc(MAX_STACK_SIZE * sizeof(char));
-	s->top = -1;
+    s->data = (int*)malloc(MAX_STACK_SIZE * sizeof(int));
+    s->top = -1;
 }
 
-void push(Stack* s, char c) {
-	s->top++;
-	s->data[s->top] = c;
+void push(Stack* s, int x) {
+    s->top++;
+    s->data[s->top] = x;
 }
 
-char pop(Stack* s) {
-	char c = s->data[s->top];
-	s->top--;
-	return c;
+int pop(Stack* s) {
+    int x = s->data[s->top];
+    s->top--;
+    return x;
 }
 
 int is_empty(Stack* s) {
-	return s->top == -1;
-}
-
-int is_full(Stack* s) {
-	return s->top == MAX_STACK_SIZE - 1;
+    return s->top == -1;
 }
 
 void destroy(Stack* s) {
-	free(s->data);
+    free(s->data);
 }
 
-int is_pair(char open, char close) {
-	return (open == '(' && close == ')') || (open == '[' && close == ']') || (open == '{' && close == '}') || (open == '<' && close == '>');
-}
+int evaluate_postfix(char* expr) {
+    Stack s;
+    init(&s);
 
-int is_balanced(char* str) {
-	Stack s;
-	init(&s);
+    for (int i = 0; expr[i] != '='; i++) {
+        if (expr[i] >= '0' && expr[i] <= '9') {
+            push(&s, expr[i] - '0');
+        }
+        else if (expr[i] == '+') {
+            int b = pop(&s);
+            int a = pop(&s);
+            push(&s, a + b);
+        }
+        else if (expr[i] == '-') {
+            int b = pop(&s);
+            int a = pop(&s);
+            push(&s, a - b);
+        }
+        else if (expr[i] == '*') {
+            int b = pop(&s);
+            int a = pop(&s);
+            push(&s, a * b);
+        }
+    }
 
-
-	for (int i = 0; str[i] != '\0'; i++) {
-		if (str[i] == '(' || str[i] == '[' || str[i] == '{' || str[i] == '<') {
-			push(&s, str[i]);
-		}
-		else if (str[i] == ')' || str[i] == ']' || str[i] == '}' || str[i] == '>') {
-			if (is_empty(&s) || !is_pair(pop(&s), str[i])) {
-				destroy(&s);
-				return 0;
-			}
-		}
-
-		int result = is_empty(&s);
-		destroy(&s);
-		return result;
-	}
+    int result = pop(&s);
+    destroy(&s);
+    return result;
 }
 
 int main() {
-		char str[MAX_STACK_SIZE];
-		scanf("%s", str);
+    char expr[MAX_STACK_SIZE];
+    scanf("%[^\n]", expr);
 
-		if (is_balanced(str)) {
-			printf("YES\n");
-		}
-		else {
-			printf("NO\n");
-		}
+    printf("%d\n", evaluate_postfix(expr));
 
-		return 0;
+    return 0;
 }
+
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//#define MAX_STACK_SIZE 100000
+//
+//typedef struct {
+//	char* data;
+//	int top;
+//} Stack;
+//
+//void init(Stack* s) {
+//	s->data = (char*)malloc(MAX_STACK_SIZE * sizeof(char));
+//	s->top = -1;
+//}
+//
+//void push(Stack* s, char c) {
+//	s->top++;
+//	s->data[s->top] = c;
+//}
+//
+//char pop(Stack* s) {
+//	char c = s->data[s->top];
+//	s->top--;
+//	return c;
+//}
+//
+//int is_empty(Stack* s) {
+//	return s->top == -1;
+//}
+//
+//int is_full(Stack* s) {
+//	return s->top == MAX_STACK_SIZE - 1;
+//}
+//
+//void destroy(Stack* s) {
+//	free(s->data);
+//}
+//
+//int is_pair(char open, char close) {
+//	return (open == '(' && close == ')') || (open == '[' && close == ']') || (open == '{' && close == '}') || (open == '<' && close == '>');
+//}
+//
+//int is_balanced(char* str) {
+//	Stack s;
+//	init(&s);
+//
+//
+//	for (int i = 0; str[i] != '\0'; i++) {
+//		if (str[i] == '(' || str[i] == '[' || str[i] == '{' || str[i] == '<') {
+//			push(&s, str[i]);
+//		}
+//		else if (str[i] == ')' || str[i] == ']' || str[i] == '}' || str[i] == '>') {
+//			if (is_empty(&s) || !is_pair(pop(&s), str[i])) {
+//				destroy(&s);
+//				return 0;
+//			}
+//		}
+//
+//		int result = is_empty(&s);
+//		destroy(&s);
+//		return result;
+//	}
+//}
+//
+//int main() {
+//		char str[MAX_STACK_SIZE];
+//		scanf("%s", str);
+//
+//		if (is_balanced(str)) {
+//			printf("YES\n");
+//		}
+//		else {
+//			printf("NO\n");
+//		}
+//
+//		return 0;
+//}
 
 //#include <stdio.h>
 //#include <assert.h>
