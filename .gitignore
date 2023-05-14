@@ -1,0 +1,5 @@
+*.log
+*.opendb
+*.ninja_log
+*.ninja_deps
+*.e.VC.opendb

@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <assert.h>
-#define N 8
+#include <stdlib.h>
+#define N 10    // на сколько будет изменяться размер стека в штуках
 
 typedef int Data;
 typedef struct {
-    Data a[N]; // данные
+    Data * a; // данные
     unsigned int n; // сколько элементов хранится в стеке
+    size_t size; // для скольки элементов выделена память
 } Stack;
 
 void print(Stack* st)
@@ -15,12 +17,38 @@ void print(Stack* st)
     printf("\n");
 }
 
+int is_empty(Stack* st) {
+    return st->n == 0;
+}
+
+int is_full(Stack* st) {
+    return st->n == st->size;
+}
+
 void init(Stack* st) {
     st->n = 0;
+    st->size = 0;
+    st->a = NULL;
+}
+
+Stack* create() {
+    Stack* st = malloc(sizeof(Stack));
+    init(st);
+    return st;
+}
+
+void destroy(Stack* st) {
+    free(st->a);
+    free(st);
 }
 
 void push(Stack* st, Data data)
 {
+    if (is_full(st)) {
+        st->size += N;
+        st->a = realloc(st->a, st->size * sizeof(st->a[0]));
+    }
+
     st->a[st->n] = data;
     st->n++;
 }
@@ -32,22 +60,11 @@ Data pop(Stack* st)
     return res;
 }
 
-int is_empty(Stack* st) {
-    return st->n == 0;
-}
-
-int is_full(Stack* st) {
-    return st->n == sizeof(st->a) / sizeof(st->a[0]);
-}
-
 int main()
 {
     Data test[N] = { 5, 17, -3, 0, 1, 2, 3, 4 };
     
-
-
-    Stack stack;            // создаем стек
-    Stack* st = &stack;    // указатель на созданный стек
+    Stack* st = create();    // указатель на созданный стек
 
     init(st);
     printf("empty: %s\n", is_empty(st) ? "YES" : "NO"); // YES
@@ -73,7 +90,9 @@ int main()
 
     printf("empty: %s\n", is_empty(st) ? "YES" : "NO"); // YES
 
-    assert(sizeof(test) == sizeof(st->a));
+    //assert(sizeof(test) == sizeof(st->a));
+
+    destroy(st);
 
     return 0;
 
