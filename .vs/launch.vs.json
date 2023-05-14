@@ -1,0 +1,12 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "C_MFTII_study.exe",
+      "name": "C_MFTII_study.exe"
+    }
+  ]
+}
