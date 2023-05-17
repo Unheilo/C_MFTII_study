@@ -113,14 +113,37 @@ Node* push_front(Node* list, Data d) {
 	return p;
 }
 
+Node* push_back(Node* list, Data d) {
+	return push_front(list->prev, d);
+}
+
 void test_alloc() {
 	Node z;
 	Node* list = &z;
+
+	Data test_data1[] = { 21, 17, 3 };
+	Data test_data2[] = { 10, 8 };
 
 	init(list);
 	printf("Empty %s\n", is_empty(list) ? "YES" : "NO");
 
 	Node* t;
+	for (size_t i = 0; i < sizeof(test_data1) / sizeof(test_data1[0]); i++) {
+		t = push_front(list, test_data1[i]);
+		print(list);
+		printf("pushed: %d\n", t->data);
+	}
+	// 3 17 21
+	for (size_t i = 0; i < sizeof(test_data2) / sizeof(test_data2[0]); i++) {
+		t = push_back(list, test_data2[i]);
+		print(list);
+		printf("pushed_back: %d\n", t->data);
+	}
+	// 3 17 21 10 8
+	printf("Empty %s\n", is_empty(list) ? "YES" : "NO");
+
+
+
 	t = push_front(list, 21);
 	print(list); // 21
 	printf("pushed: %d\n", t->data);
