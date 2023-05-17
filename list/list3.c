@@ -106,7 +106,29 @@ void test() {
 
 }
 
+Node* push_front(Node* list, Data d) {
+	Node* p = malloc(sizeof(Node));
+	p->data = d;
+	insert(list, p);
+	return p;
+}
+
+void test_alloc() {
+	Node z;
+	Node* list = &z;
+
+	init(list);
+	printf("Empty %s\n", is_empty(list) ? "YES" : "NO");
+
+	Node* t;
+	t = push_front(list, 21);
+	print(list); // 21
+	printf("pushed: %d\n", t->data);
+	printf("Empty %s\n", is_empty(list) ? "YES" : "NO");
+}
+
 int main() {
-	test();
+	//test();
+	test_alloc();
 	return 0;
 }
