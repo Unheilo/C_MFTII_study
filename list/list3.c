@@ -58,8 +58,11 @@ void init(Node* list) {
 	list->prev = list;
 }
 
-int main()
-{
+int is_empty(Node* list) {
+	return list->prev == list && list->next == list;
+}
+
+void test() {
 	Node z, a, b, c, u, w;
 	Node* list = &z;
 	z.data = 0;
@@ -70,9 +73,10 @@ int main()
 	w.data = 8;
 
 	init(list);
-
+	printf("Empty %s\n", is_empty(list) ? "YES" : "NO");
 	insert(list, &c);
 	print(list);		// 21
+	printf("Empty %s\n", is_empty(list) ? "YES" : "NO");
 
 	insert(list, &b);
 	print(list);		// 17 21
@@ -100,5 +104,9 @@ int main()
 	print(list);		// 3  17 21
 	print_back(list);	// 21 17  3
 
+}
+
+int main() {
+	test();
 	return 0;
 }
