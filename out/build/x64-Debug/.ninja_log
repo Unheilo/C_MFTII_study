@@ -1,5 +1,7 @@
 # ninja log v5
-2	82	7057820961923000	CMakeFiles/C_MFTII_study.dir/Stack/list1.c.obj	4a90a4b5330fbb1f
-7	235	7057821462437196	CMakeFiles/C_MFTII_study.dir/Stack/stack(3).c.obj	e7846628800620b
-111	283	7057889941850053	C_MFTII_study.exe	501042e68462038e
-13	111	7057889940654375	CMakeFiles/C_MFTII_study.dir/list/list1.c.obj	2bd4c6fb4d58ec14
+3	414	7060268917045339	CMakeFiles/C_MFTII_study.dir/list/list3.c.obj	1791804ced0304bf
+416	856	7060268921263685	C_MFTII_study.exe	de4f6192124fcfdf
+12	122	7060269805468946	CMakeFiles/C_MFTII_study.dir/list/list3.c.obj	1791804ced0304bf
+123	337	7060269807189202	C_MFTII_study.exe	de4f6192124fcfdf
+10	595	7060270098864238	CMakeFiles/C_MFTII_study.dir/list/list3.c.obj	1791804ced0304bf
+596	838	7060270101051766	C_MFTII_study.exe	de4f6192124fcfdf
