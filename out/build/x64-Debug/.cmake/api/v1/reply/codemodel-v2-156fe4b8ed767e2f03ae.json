@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "C_MFTII_study::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-C_MFTII_study-Debug-fc2fb0cce76e1e528697.json",
+					"jsonFile" : "target-C_MFTII_study-Debug-d27d67b1f77e8c438292.json",
 					"name" : "C_MFTII_study",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/stanislavkrylov/source/Study/out/build/x64-Debug",
-		"source" : "C:/Users/stanislavkrylov/source/Study"
+		"build" : "C:/Users/Admin/Documents/GitHub/out/build/x64-Debug",
+		"source" : "C:/Users/Admin/Documents/GitHub"
 	},
 	"version" : 
 	{

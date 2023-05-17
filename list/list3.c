@@ -18,8 +18,11 @@ void print(Node* list) {
 }
 
 void print_dbg(Node* list) {
+	Node* p = list;
+	printf("-------\n");
+	printf("list: prey=%p %p next=%p\n", p->prev, p, p->next);
 	for (Node* p = list->next; p != list; p = p->next) {
-		printf("%d prey=%p p% next=%p\n", p->data, p->prev, p, p->next);
+		printf("%d prey=%p %p next=%p\n", p->data, p->prev, p, p->next);
 	}
 	printf("\n");
 }
