@@ -178,13 +178,51 @@ void test_alloc() {
 	printf("pop back: %d\n", res);	// 8
 
 	clear(list);
+
 	printf("Empty %s\n", is_empty(list) ? "YES" : "NO");
 
+}
+
+void print_it(Data d, void * arg) {
+	fprintf((FILE*)arg,"%d ", d);
+}
+
+void foreach(Node* list, void (*func)(Data d, void * a), void * arg) {
+	for (Node* p = list->next; p != list; p = p->next) {
+		func(p->data, arg);
+	}
+
+}
+void print1(Node* list, FILE * fout) {
+	foreach(list, print_it, fout);
+	fprintf(fout, "\n");
+
+}
+
+void test_foreach() {
+	Node z;
+	Node* list = &z;
+
+	Data test_data1[] = { 8, 10, 21, 17, 3 };
+
+	init(list);
+	for (size_t i = 0; i < sizeof(test_data1) / sizeof(test_data1[0]); i++)
+		push_front(list, test_data1[i]);
+	print(list); // 3 17 21 10 8
+	printf("to stdout\n");
+	print1(list, stdout); // 3 17 21 10 8
+	printf("to stderr\n");
+	print1(list, stderr); // 3 17 21 10 8
+
+
+
+	clear(list);
 
 }
 
 int main() {
 	//test();
-	test_alloc();
+	//test_alloc();
+	test_foreach();
 	return 0;
 }
