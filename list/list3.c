@@ -34,36 +34,71 @@ void print_back(Node* list) {
 	printf("\n");
 }
 
+void insert(Node* p, Node* t) {
+	Node* q = p->next;
+	t->prev = p;	// 1
+	t->next = q;	// 2
+	p->next = t;	// 3
+	q->prev = t;	// 4
+}
+
+void insert_before(Node* q, Node* t) {
+	insert(q->prev, t);
+}
+
+void list_remove(Node* t) {
+	Node* p = t->prev;
+	Node* q = t->next;
+	p->next = q;
+	q->prev = p;
+}
+
+void init(Node* list) {
+	list->next = list;
+	list->prev = list;
+}
+
 int main()
 {
-	Node z, a = { 3 }, b = { 17 }, c = { 21 }, u = { 10 };
-	Node * list = &z;
-
+	Node z, a, b, c, u, w;
+	Node* list = &z;
 	z.data = 0;
 	a.data = 3;
 	b.data = 17;
 	c.data = 21;
 	u.data = 10;
+	w.data = 8;
 
-	z.next = &a;
-	z.prev = &c;
-	a.next = &b;
-	a.prev = &z;
-	b.next = &c;
-	b.prev = &a;
-	c.next = &z;
-	c.prev = &b;
+	init(list);
+
+	insert(list, &c);
+	print(list);		// 21
+
+	insert(list, &b);
+	print(list);		// 17 21
+
+	insert(list, &a);
+	print(list);		// 3 17 21
 
 	print(list);		// 3 17 21
 	print_back(list);	// 21 17 3
 	print_dbg(list);	// 3 17 21
+	
+	insert(&a, &u);
+	print(list);		// 3 10 17 21
+	print_back(list);	// 21 17 10 3
 
-	u.prev = &a;	// 1
-	u.next = &b;	// 2
-	a.next = &u;	// 3
-	b.prev = &u;	// 4
-	print(list);
-	print_back(list);
+	insert_before(&u, &w);
+	print(list);		// 3 8 10 17 21
+	print_back(list);	// 21 17 10 8 3
+
+	list_remove(&u);
+	print(list);		// 3 8 17 21
+	print_back(list);	// 21 17 8 3
+
+	list_remove(&w);
+	print(list);		// 3  17 21
+	print_back(list);	// 21 17  3
 
 	return 0;
 }
