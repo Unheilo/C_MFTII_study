@@ -187,6 +187,19 @@ void print_it(Data d, void * arg) {
 	fprintf((FILE*)arg,"%d ", d);
 }
 
+void sum_all(Node* list, Data * res) {
+	*res = 0;
+	for (Node* p = list->next; p != list; p = p->next) {
+		res = res + p->data;
+	}
+	return res;
+}
+
+void sum_it(Data d, void* a) {
+	Data* res = (Data*)a;
+	*res = *res + d;
+}
+
 void foreach(Node* list, void (*func)(Data d, void * a), void * arg) {
 	for (Node* p = list->next; p != list; p = p->next) {
 		func(p->data, arg);
@@ -214,15 +227,19 @@ void test_foreach() {
 	printf("to stderr\n");
 	print1(list, stderr); // 3 17 21 10 8
 
-
-
+	Data sum = 0;
+	foreach(list, sum_it, &sum); 
+	printf("sum is %d\n", sum);	// 59
 	clear(list);
 
 }
 
 int main() {
-	//test();
-	//test_alloc();
+	printf("---test------------------------------\n");
+	test();
+	printf("---test_alloc------------------------\n");
+	test_alloc();
+	printf("---test_foreach----------------------\n");
 	test_foreach();
 	return 0;
 }
