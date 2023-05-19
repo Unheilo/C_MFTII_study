@@ -26,6 +26,14 @@ int num_fields;
 
     int i;
 
+    printf("fields: ");
+    for (i = 0; i < num_fields; i++) {
+        int field = fields[i];
+        printf("%d ",field);
+    }
+
+    printf("\n");
+
     for (i = 0; i < num_fields; i++) {
 
         int field = fields[i];
@@ -112,11 +120,11 @@ int main() {
 
     printf("Enter the fields to sort by (0-birth year, 1-name, 2-gender, 3-height):\n");
     for (i = 0; i < num_fields; i++) {
-        scanf("%d", &fields[i]);
+        scanf_s("%d", &fields[i]);
     }
 
     for (int i = 0; i < num_fields; i++) {
-        printf("%d ", fields[i]);
+        printf("%d : %d ",i, fields[i]);
     }
 
     printf("\n");
