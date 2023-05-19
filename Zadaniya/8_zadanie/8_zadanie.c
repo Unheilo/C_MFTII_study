@@ -82,6 +82,7 @@ int main() {
     fp = fopen(filename, "r");
     if (fp == NULL) {
         printf("Oshibka otkritiya faila %s\n", filename);
+        system("pause");
         return 1;
     }
 
@@ -101,12 +102,14 @@ int main() {
     fp = fopen(filename, "r");
     if (fp == NULL) {
         printf("Oshibka otkritiya faila! %s\n", filename);
+        system("pause");
         return 1;
     }
 
     person* persons = (person*)malloc(num_persons * sizeof(person));
     if (persons == NULL) {
         printf("Oshibka videleniya pamyati.\n");
+        system("pause");
         return 1;
     }
 
