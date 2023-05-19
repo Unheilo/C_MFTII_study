@@ -81,7 +81,7 @@ int main() {
     char filename[] = "persons.txt";
     fp = fopen(filename, "r");
     if (fp == NULL) {
-        printf("Error opening file %s\n", filename);
+        printf("Oshibka otkritiya faila %s\n", filename);
         return 1;
     }
 
@@ -100,13 +100,13 @@ int main() {
 
     fp = fopen(filename, "r");
     if (fp == NULL) {
-        printf("Error opening file %s\n", filename);
+        printf("Oshibka otkritiya faila! %s\n", filename);
         return 1;
     }
 
     person* persons = (person*)malloc(num_persons * sizeof(person));
     if (persons == NULL) {
-        printf("Error allocating memory\n");
+        printf("Oshibka videleniya pamyati.\n");
         return 1;
     }
 
@@ -116,16 +116,16 @@ int main() {
     }
 
     int num_fields = 0;
-    printf("Enter the number of fields to sort by (1-4): ");
+    printf("Vvedite koli4estvo poley dlya sortirovki (1-4): ");
     scanf("%d", &num_fields);
 
     int* fields = (int*)malloc(num_fields * sizeof(int));
     if (fields == NULL) {
-        printf("Error allocating memory\n");
+        printf("Oshibka videleniya pamyati.\n");
         return 1;
     }
 
-    printf("Enter the fields to sort by (0-birth year, 1-name, 2-gender, 3-height):\n");
+    printf("Vvedite polya dlya sortirovki(0-data rojdeniya, 1-imya/familiya, 2-pol, 3-rost):\n");
     for (i = 0; i < num_fields; i++) {
         scanf_s("%d", &fields[i]);
         global_fields[i] = fields[i];
@@ -142,20 +142,19 @@ int main() {
     //}
     //printf("\n");
 
-    global_num_fields = num_fields;
     //compare_args args = { fields, num_fields };
 
+    global_num_fields = num_fields;
     qsort(persons, num_persons, sizeof(person), compare);
  
-
     for (i = 0; i < num_persons; i++) {
         print_person(persons[i]);
     }
 
     free(persons);
     free(fields);
-
     fclose(fp);
 
+    system("pause");
     return 0;
 }
