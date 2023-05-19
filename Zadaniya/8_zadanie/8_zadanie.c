@@ -83,34 +83,54 @@ int main() {
 
     fclose(fp);
 
+    fp = fopen(filename, "r");
+    if (fp == NULL) {
+        printf("Error opening file %s\n", filename);
+        return 1;
+    }
 
+    person* persons = (person*)malloc(num_persons * sizeof(person));
+    if (persons == NULL) {
+        printf("Error allocating memory\n");
+        return 1;
+    }
 
-    //int num_fields;
-    //printf("Enter the number of fields to sort by (1-4): ");
-    //scanf("%d", &num_fields);
-    //getchar(); // считываем символ новой строки
+    int i;
+    for (i = 0; i < num_persons; i++) {
+        fscanf(fp, "%s %s %d %c %f\n", persons[i].firstname, persons[i].lastname, &persons[i].birth_year, &persons[i].gender, &persons[i].height);
+    }
 
-    //int* fields = (int*)malloc(num_fields * sizeof(int));
-    //if (fields == NULL) {
-    //    printf("Error allocating memory\n");
-    //    return 1;
-    //}
+    int num_fields;
+    printf("Enter the number of fields to sort by (1-4): ");
+    scanf("%d", &num_fields);
 
-    //printf("Enter the fields to sort by (0-birth year, 1-name, 2-gender, 3-height):\n");
-    //for (i = 0; i < num_fields; i++) {
-    //    scanf("%d", &fields[i]);
-    //}
+    int* fields = (int*)malloc(num_fields * sizeof(int));
+    if (fields == NULL) {
+        printf("Error allocating memory\n");
+        return 1;
+    }
 
-    //qsort(persons, num_persons, sizeof(person), (void*)compare, fields, num_fields);
+    printf("Enter the fields to sort by (0-birth year, 1-name, 2-gender, 3-height):\n");
+    for (i = 0; i < num_fields; i++) {
+        scanf("%d", &fields[i]);
+    }
 
-    //for (i = 0; i < num_persons; i++) {
-    //    print_person(persons[i]);
-    //}
+    for (int i = 0; i < num_fields; i++) {
+        printf("%d ", fields[i]);
+    }
 
-    //free(persons);
-    //free(fields);
+    printf("\n");
 
-    //fclose(fp);
+    qsort(persons, num_persons, sizeof(person), (void*)compare, fields, num_fields);
+
+    for (i = 0; i < num_persons; i++) {
+        print_person(persons[i]);
+    }
+
+    free(persons);
+    free(fields);
+
+    fclose(fp);
 
     return 0;
 }
