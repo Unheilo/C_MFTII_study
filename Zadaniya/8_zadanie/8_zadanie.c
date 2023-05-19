@@ -57,10 +57,11 @@ int num_fields;
 void print_person(p)
 person p;
 {
-    printf("%s %s, %d, %c, %.2f\n", p.firstname, p.lastname, p.birth_year, p.gender, p.height);
+    printf("%s %s %d %c %.2f\n", p.firstname, p.lastname, p.birth_year, p.gender, p.height);
 }
 
 int main() {
+
     FILE* fp;
     char filename[] = "persons.txt";
     fp = fopen(filename, "r");
@@ -72,29 +73,17 @@ int main() {
     int num_persons = 0;
     char buffer[1024];
     while (fgets(buffer, 1024, fp) != NULL) {
+        person p;
+        sscanf(buffer, "%s %s %d %c %f", p.firstname, p.lastname, &p.birth_year, &p.gender, &p.height);
+        print_person(p);
         num_persons++;
     }
 
+    printf("Number of persons in file %s: %d\n", filename, num_persons);
+
     fclose(fp);
 
-    printf("num_persons: %d", num_persons);
 
-    //fp = fopen(filename, "r");
-    //if (fp == NULL) {
-    //    printf("Error opening file %s\n", filename);
-    //    return 1;
-    //}
-
-    //person* persons = (person*)malloc(num_persons * sizeof(person));
-    //if (persons == NULL) {
-    //    printf("Error allocating memory\n");
-    //    return 1;
-    //}
-
-    //int i;
-    //for (i = 0; i < num_persons; i++) {
-    //    fscanf(fp, "%s %s %d %c %f\n", persons[i].firstname, persons[i].lastname, &persons[i].birth_year, &persons[i].gender, &persons[i].height);
-    //}
 
     //int num_fields;
     //printf("Enter the number of fields to sort by (1-4): ");

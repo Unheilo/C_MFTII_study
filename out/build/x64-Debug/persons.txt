@@ -1,6 +1,10 @@
-Anton Vajenin 2000 1.75 M
-Oleg Frolov 2005 1.70 M
-Stas Mihaylov 1978 1.90 M
-Olesya Gorashko 2002 1.73 F
-Vadim Di 2002 1.75 F
-Nastya Krylova 2005 1.70 F
+Ivan Ivanov 1980 m 1.75
+Peter Petrov 1990 m 1.85
+Anna Sidorova 1985 f 1.65
+Elena Kuznetsova 1975 f 1.60
+Alexey Smirnov 1988 m 1.80
+Olga Alekseeva 1995 f 1.70
+Dmitry Kuznetsov 1982 m 1.78
+Maria Novikova 1992 f 1.68
+Natalia Ivanova 1988 f 1.75
+Anna Petrova 1995 f 1.72
