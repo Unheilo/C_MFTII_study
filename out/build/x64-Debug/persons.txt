@@ -8,3 +8,11 @@ Dmitry Kuznetsov 1982 m 1.78
 Maria Novikova 1992 f 1.68
 Natalia Ivanova 1988 f 1.75
 Anna Petrova 1995 f 1.72
+Anton Vajenin 2000 m 1.75
+Oleg Frolov 2005 m 1.70
+Stas Mihaylov 1978 m 1.90
+Olesya Gorashko 2002 f 1.73
+Oleg Kojemyako 1960 m 1.75
+Vladimir Putin 1975 m 1.70
+Alla Pugacheva 1979 f 1.65
+Vadim Di 2002 m 1.74

@@ -3,8 +3,7 @@
 #include <string.h>
 
 #define MAX_NAME_LEN 50
-#define MAX_SORT_FIELDS 4
-
+#define N 4
 
 typedef struct {
     char firstname[MAX_NAME_LEN];
@@ -14,65 +13,32 @@ typedef struct {
     float height;
 } person;
 
-int compare(a, b, fields, num_fields)
+//typedef struct {
+//    int* fields;
+//    int num_fields;
+//} compare_args;
+
+global_fields[N]; // для передачи значений в compare 
+int global_num_fields;
+
+int compare(a, b)
 const void* a;
 const void* b;
-int* fields;
-int num_fields;
 {
-    person person_a = *(person*)a;
-    person person_b = *(person*)b;
-    int result = 0;
+    int fields[N];
 
-    int i;
-
-    printf("fields: ");
-    for (i = 0; i < num_fields; i++) {
-        int field = fields[i];
-        printf("%d ",field);
-    }
-
-    printf("\n");
-
-    for (i = 0; i < num_fields; i++) {
-
-        int field = fields[i];
-        switch (field) {
-        case 0:
-            result = (person_a.birth_year > person_b.birth_year) - (person_a.birth_year < person_b.birth_year);
-            break;
-        case 1:
-            result = strcmp(person_a.firstname, person_b.firstname);
-            if (result == 0) {
-                result = strcmp(person_a.lastname, person_b.lastname);
-            }
-            break;
-        case 2:
-            result = person_a.gender - person_b.gender;
-            break;
-        case 3:
-            result = (person_a.height > person_b.height) - (person_a.height < person_b.height);
-            break;
-        default:
-            break;
-        }
-        if (result != 0) return result;
-    }
-
-    return 0;
-}
-
-int compare2(a, b, fields2, num_fields2)
-const void* a;
-const void* b;
-void* fields2;
-void* num_fields2;
-{
     person person_a = *(person*)a;
     person person_b = *(person*)b;
 
-    int* fields = (int*)fields2;
-    int num_fields = *(int*)num_fields2;
+    int num_fields = global_num_fields;
+    for (int i = 0; i < num_fields; i++) {
+        fields[i] = global_fields[i];
+    }
+
+  /*  printf("Comp. Num_fields: %d\n", num_fields);
+    for (int i = 0; i < num_fields; i++) {
+        printf("Comp. Fields: %d\n", fields[i]);
+    }*/
 
     int result = 0;
 
@@ -85,9 +51,7 @@ void* num_fields2;
             break;
         case 1:
             result = strcmp(person_a.firstname, person_b.firstname);
-            if (result == 0) {
-                result = strcmp(person_a.lastname, person_b.lastname);
-            }
+            if (result == 0) result = strcmp(person_a.lastname, person_b.lastname);
             break;
         case 2:
             result = person_a.gender - person_b.gender;
@@ -126,11 +90,11 @@ int main() {
     while (fgets(buffer, 1024, fp) != NULL) {
         person p;
         sscanf(buffer, "%s %s %d %c %f", p.firstname, p.lastname, &p.birth_year, &p.gender, &p.height);
-        print_person(p);
+        //print_person(p);
         num_persons++;
     }
 
-    printf("Number of persons in file %s: %d\n", filename, num_persons);
+    //printf("Number of persons in file %s: %d\n", filename, num_persons);
 
     fclose(fp);
 
@@ -164,20 +128,25 @@ int main() {
     printf("Enter the fields to sort by (0-birth year, 1-name, 2-gender, 3-height):\n");
     for (i = 0; i < num_fields; i++) {
         scanf_s("%d", &fields[i]);
+        global_fields[i] = fields[i];
     }
 
-    for (int i = 0; i < num_fields; i++) {
-        printf("%d : %d ",i, fields[i]);
-    }
+    //for (int i = 0; i < num_fields; i++) {
+    //    printf("%d : %d ",i, fields[i]);
+    //}
 
-    printf("\n");
+    //printf("\n");
 
-    for (i = 0; i < num_persons; i++) {
-        print_person(persons[i]);
-    }
-    printf("\n");
+    //for (i = 0; i < num_persons; i++) {
+    //    print_person(persons[i]);
+    //}
+    //printf("\n");
 
-    qsort(persons, num_persons, sizeof(person), compare2, fields, num_fields);
+    global_num_fields = num_fields;
+    //compare_args args = { fields, num_fields };
+
+    qsort(persons, num_persons, sizeof(person), compare);
+ 
 
     for (i = 0; i < num_persons; i++) {
         print_person(persons[i]);
