@@ -21,10 +21,14 @@ typedef struct {
 global_fields[N]; // для передачи значений в compare 
 int global_num_fields;
 
-int compare(a, b)
-const void* a;
-const void* b;
+int compare(const void* a, const void* b)
 {
+    /*compare_args* args = (compare_args*)args_ptr;
+    person* person_a = (person*)a;
+    person* person_b = (person*)b;
+    int field_index = args->field_index;
+    int order = args->order;*/
+
     int fields[N];
 
     person person_a = *(person*)a;
