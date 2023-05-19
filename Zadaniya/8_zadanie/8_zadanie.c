@@ -62,6 +62,49 @@ int num_fields;
     return 0;
 }
 
+int compare2(a, b, fields2, num_fields2)
+const void* a;
+const void* b;
+void* fields2;
+void* num_fields2;
+{
+    person person_a = *(person*)a;
+    person person_b = *(person*)b;
+
+    int* fields = (int*)fields2;
+    int num_fields = *(int*)num_fields2;
+
+    int result = 0;
+
+    for (int i = 0; i < num_fields; i++) {
+
+        int field = fields[i];
+        switch (field) {
+        case 0:
+            result = (person_a.birth_year > person_b.birth_year) - (person_a.birth_year < person_b.birth_year);
+            break;
+        case 1:
+            result = strcmp(person_a.firstname, person_b.firstname);
+            if (result == 0) {
+                result = strcmp(person_a.lastname, person_b.lastname);
+            }
+            break;
+        case 2:
+            result = person_a.gender - person_b.gender;
+            break;
+        case 3:
+            result = (person_a.height > person_b.height) - (person_a.height < person_b.height);
+            break;
+        default:
+            break;
+        }
+        if (result != 0) return result;
+    }
+
+    return 0;
+
+}
+
 void print_person(p)
 person p;
 {
@@ -108,7 +151,7 @@ int main() {
         fscanf(fp, "%s %s %d %c %f\n", persons[i].firstname, persons[i].lastname, &persons[i].birth_year, &persons[i].gender, &persons[i].height);
     }
 
-    int num_fields;
+    int num_fields = 0;
     printf("Enter the number of fields to sort by (1-4): ");
     scanf("%d", &num_fields);
 
@@ -129,7 +172,12 @@ int main() {
 
     printf("\n");
 
-    qsort(persons, num_persons, sizeof(person), (void*)compare, fields, num_fields);
+    for (i = 0; i < num_persons; i++) {
+        print_person(persons[i]);
+    }
+    printf("\n");
+
+    qsort(persons, num_persons, sizeof(person), compare2, fields, num_fields);
 
     for (i = 0; i < num_persons; i++) {
         print_person(persons[i]);
