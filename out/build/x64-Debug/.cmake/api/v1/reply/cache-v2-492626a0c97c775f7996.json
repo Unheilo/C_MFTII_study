@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Admin/Documents/GitHub/out/build/x64-Debug"
+			"value" : "c:/Users/Admin/Documents/github/out/build/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -355,7 +355,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Admin/Documents/GitHub/out/build/x64-Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/Admin/Documents/github/out/build/x64-Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -427,7 +427,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/Admin/Documents/GitHub/out/install/x64-Debug"
+			"value" : "C:/Users/Admin/Documents/github/out/install/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -963,7 +963,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Admin/Documents/GitHub/out/build/x64-Debug"
+			"value" : "C:/Users/Admin/Documents/github/out/build/x64-Debug"
 		},
 		{
 			"name" : "C_MFTII_study_IS_TOP_LEVEL",
@@ -987,7 +987,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Admin/Documents/GitHub"
+			"value" : "C:/Users/Admin/Documents/github"
 		}
 	],
 	"kind" : "cache",
