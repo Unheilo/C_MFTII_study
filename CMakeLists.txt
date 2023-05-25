@@ -15,7 +15,7 @@ add_executable(C_MFTII_study
         #"list/list1.c" 
         #"list/list3.c" 
         #"Zadaniya/8_zadanie/8_zadanie.c" 
-        "bkv/lab1/count.c")
+        "bkv/lab1/count.c" "bkv/lab2/templ1251.c" "bkv/lab2/timeval_.c" "bkv/lab2/timeval.c" "bkv/lab2/templ.c")
 
 
 

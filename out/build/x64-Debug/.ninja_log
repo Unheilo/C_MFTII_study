@@ -1,18 +1,9 @@
 # ninja log v5
 13	97	7060521439979004	CMakeFiles/C_MFTII_study.dir/list/list3.c.obj	9088580a56a9b8a5
-480	777	7062345411014271	C_MFTII_study.exe	38f191080abd49c2
-10	673	7066691882592924	CMakeFiles/C_MFTII_study.dir/bkv/lab1/count.c.obj	ee18428c5222e444
-4	676	7066691882622933	CMakeFiles/C_MFTII_study.dir/Zadaniya/8_zadanie/8_zadanie.c.obj	3e2c663c46fbe4a4
-9	364	7066692361751722	C_MFTII_study.exe	d671fcf435d78399
-8	1200	7066700020175890	CMakeFiles/C_MFTII_study.dir/bkv/lab1/count.c.obj	ee18428c5222e444
-1201	1564	7066700022883895	C_MFTII_study.exe	d671fcf435d78399
-9	109	7066701052373966	CMakeFiles/C_MFTII_study.dir/bkv/lab1/count.c.obj	ee18428c5222e444
-110	283	7066701053453422	C_MFTII_study.exe	d671fcf435d78399
-10	248	7066701367000209	CMakeFiles/C_MFTII_study.dir/bkv/lab1/count.c.obj	ee18428c5222e444
-248	508	7066701368595793	C_MFTII_study.exe	d671fcf435d78399
-16	488	7066727157060484	CMakeFiles/C_MFTII_study.dir/bkv/lab1/count.c.obj	ee18428c5222e444
-9	93	7066727334818129	CMakeFiles/C_MFTII_study.dir/bkv/lab1/count.c.obj	ee18428c5222e444
-12	104	7066727705636711	CMakeFiles/C_MFTII_study.dir/bkv/lab1/count.c.obj	ee18428c5222e444
-105	339	7066727706876707	C_MFTII_study.exe	d671fcf435d78399
+190	364	7066874327704796	C_MFTII_study.exe	db56ddc6e8cf775f
 10	389	7066728393356656	CMakeFiles/C_MFTII_study.dir/bkv/lab1/count.c.obj	ee18428c5222e444
-389	766	7066728396489989	C_MFTII_study.exe	d671fcf435d78399
+4	676	7066691882622933	CMakeFiles/C_MFTII_study.dir/Zadaniya/8_zadanie/8_zadanie.c.obj	3e2c663c46fbe4a4
+10	190	7066874326514725	CMakeFiles/C_MFTII_study.dir/bkv/lab2/templ.c.obj	a91e4381acfdf305
+2	586	7066873694794231	CMakeFiles/C_MFTII_study.dir/bkv/lab2/templ1251.c.obj	cdfc92dbd596f17e
+6	189	7066874326514725	CMakeFiles/C_MFTII_study.dir/bkv/lab2/timeval.c.obj	8da8c64fd11bcd22
+5	587	7066873694794231	CMakeFiles/C_MFTII_study.dir/bkv/lab2/timeval_.c.obj	4a4b61f53b1251a9
